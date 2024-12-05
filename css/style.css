@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #4CAF50;
+    --text-color: #ffffff;
+    --secondary-bg: #242424;
+    --border-glow: 0 0 5px var(--accent-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-bg);
+}
+
+.fire-icon {
+    position: absolute;
+    left: 20px;
+    z-index: 1;
+}
+
+.fire-icon i {
+    font-size: 50px;
+    color: var(--accent-color);
+    text-shadow: 
+        0 0 5px #4CAF50,
+        0 0 10px #4CAF50,
+        0 0 15px #ff6b00;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo span {
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.fire-icon::before,
+.fire-icon::after {
+    content: '•';
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    animation: smoke 3s infinite;
+    pointer-events: none;
+}
+
+.fire-icon::before {
+    left: 40%;
+    top: -12px;
+    font-size: 10px;
+    animation-delay: 0s;
+}
+
+.fire-icon::after {
+    left: 60%;
+    top: -10px;
+    font-size: 8px;
+    animation-delay: 1.5s;
+}
+
+@keyframes smoke {
+    0% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+}
+
+nav {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+}
+
+.buy-now {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.buy-now:hover {
+    background-color: #45a049;
+    text-shadow: 0 0 5px var(--text-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+    min-height: 100vh;
+}
+
+.burn-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    text-shadow: var(--border-glow);
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+}
+
+.burn-container {
+    background-color: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+    margin-bottom: 3rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+}
+
+.burn-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.burn-button:hover {
+    background-color: #45a049;
+    text-shadow: 0 0 5px var(--text-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--accent-color);
+}
+
+.stat-item {
+    text-align: center;
+    text-shadow: 0 0 3px var(--accent-color);
+}
+
+.stat-item h3 {
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--secondary-bg);
+    color: #888;
+    border-top: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+    font-size: 0.7rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--secondary-bg);
+    margin: 5% auto;
+    padding: 3rem;
+    border-radius: 10px;
+    max-width: 500px;
+    min-height: 500px;
+    position: relative;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.guide-steps {
+    margin: 2rem 0;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.step-number {
+    background-color: var(--accent-color);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.got-it-btn {
+    background-color: #666666;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.got-it-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.got-it-btn:not(:disabled):hover {
+    transform: scale(1.02);
+}
+
+.help-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.help-button:hover {
+    color: var(--accent-color);
+}
+
+.guide-pages {
+    position: relative;
+    min-height: 350px;
+    margin-bottom: 2rem;
+}
+
+.guide-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.guide-page.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.guide-illustration {
+    font-size: 4rem;
+    margin: 2.5rem 0;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.guide-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding-top: 1rem;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.nav-button:hover {
+    opacity: 1;
+}
+
+.nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.page-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+}
+
+.page-dot.active {
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+.connect-wallet-nav-btn {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--border-glow);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.connect-wallet-nav-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.connect-wallet-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.connect-wallet-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.connect-wallet-btn:not(:disabled):hover {
+    transform: scale(1.02);
+}
+
+.warning {
+    color: #ffd700 !important; /* Golden yellow for warning */
+}
+
+#walletModal {
+    z-index: 1001; /* Higher than the guide modal */
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        transparent 50%,
+        rgba(76, 175, 80, 0.025) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.guide-page h2 {
+    margin-bottom: 2rem;
+}
+
+.guide-page p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+}
+
+/* Add these styles for the FAQ section */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    text-shadow: var(--border-glow);
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--border-glow);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.faq-question span {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.faq-question i {
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #888;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(76, 175, 80, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Add smooth scrolling to body */
+html {
+    scroll-behavior: smooth;
+} 
